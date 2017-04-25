@@ -5,6 +5,9 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
+use Auth;
+use App\Article;
+
 class User extends Authenticatable
 {
     use Notifiable;
@@ -29,5 +32,15 @@ class User extends Authenticatable
 
     public function sources(){
         return $this->belongsToMany('App\Source', 'user_source', 'user_id', 'source_id');
+    }
+
+    public static function articles(){
+        return Article::where(function($query){
+            $sources = collect(Auth::user()->sources);
+
+            $sources->each(function($item) use ($query){
+                $query->orWhere('source_id', $item->id);
+            });
+        })->limit(10)->get();
     }
 }

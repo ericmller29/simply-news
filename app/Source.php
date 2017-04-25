@@ -12,4 +12,8 @@ class Source extends Model
     public function users(){
     	return $this->belongsToMany('App\User', 'user_source', 'source_id', 'user_id');
     }
+
+    public function articles(){
+    	return $this->hasMany('App\Article', 'source_id', 'id');
+    }
 }

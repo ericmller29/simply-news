@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Article;
 
+use Auth;
+
 class HomeController extends Controller
 {
     /**
@@ -23,7 +25,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $data['articles'] = Article::orderBy('published_date', 'desc')->get();
+        // $data['articles'] = Article::orderBy('published_date', 'desc')->get();
+        $data['articles'] = Auth::user()->articles();
+
         return view('dashboard', $data);
     }
 }
