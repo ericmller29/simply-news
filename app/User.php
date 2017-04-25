@@ -41,6 +41,6 @@ class User extends Authenticatable
             $sources->each(function($item) use ($query){
                 $query->orWhere('source_id', $item->id);
             });
-        })->limit(10)->get();
+        })->orderBy('published_date', 'desc')->limit(10)->get();
     }
 }

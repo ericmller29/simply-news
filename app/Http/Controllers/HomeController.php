@@ -26,6 +26,7 @@ class HomeController extends Controller
     public function index()
     {
         // $data['articles'] = Article::orderBy('published_date', 'desc')->get();
+        // return response()->json(Auth::user()->sources);
         $data['articles'] = Auth::user()->articles();
 
         return view('dashboard', $data);
