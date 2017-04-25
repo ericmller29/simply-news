@@ -1,0 +1,21 @@
+.btn{
+	font-size: 1rem;
+	padding: 10px 15px;
+	font-weight: bold;
+	text-transform: uppercase;
+	color: #fff;
+	background: $accent;
+	border: 0;
+	cursor: pointer;
+	letter-spacing: 3px;
+	transition: background 0.3s;
+	display: inline-block;
+
+	&:hover{
+		background: darken($accent, 5);
+	}
+
+	&:after{
+		display: none;
+	}
+}

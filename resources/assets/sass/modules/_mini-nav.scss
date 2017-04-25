@@ -1,0 +1,35 @@
+.mini-nav{
+	margin-bottom: 20px;
+	font-weight: bold;
+	color: darken($gray, 10);
+	font-size: 0.7em;
+
+	a{
+		display: inline-block;
+		font-weight: bold;
+		margin-left: 5px;
+		color: $font-color;
+		text-decoration: none;
+		text-transform: uppercase;
+
+		&:after{
+			height: 2px;
+			width: 100%;
+			content: '';
+			display: block;
+			background: $accent;
+			margin-top: 5px;
+			opacity: 0;
+			transition: opacity 0.3s;
+		}
+
+		&:hover:after, &.active:after{
+			opacity: 1;
+		}
+
+		&:first-child{
+			margin-right: 5px;
+			margin-left: 0;
+		}
+	}
+}

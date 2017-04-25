@@ -1,0 +1,44 @@
+.article{
+	a{
+		color: $font-color;
+		text-decoration: none;
+
+		&:after{
+			display: none;
+		}
+
+		&:hover h2{
+			color: $accent;
+		}
+	}
+
+	h2{
+		margin-top: 0;
+		transition: color 0.3s;
+	}
+
+	.article-content{
+		position: relative;
+
+		&.has-image{
+			padding-right: 200px;
+		}
+
+		p{
+			line-height: 2;
+			margin-top: 0;
+		}
+	}
+	.article-image{
+		width: 150px;
+		height: 150px;
+		overflow: hidden;
+		position: absolute;
+		right: 0;
+		top: 0;
+
+		img{
+			width: 100%;
+		}
+	}
+}
