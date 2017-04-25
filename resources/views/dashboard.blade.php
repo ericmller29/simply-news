@@ -18,6 +18,7 @@
                         </div>
                         @endif
                     </div>
+                    <span class="source"><em>Source: {{ $article->source->name }}</em></span>
                 </a>
             </article>
             @endforeach
