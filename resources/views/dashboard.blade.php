@@ -27,7 +27,7 @@
                     </div>
                     @endif
                     <h2>{{ $article->title }}</h2>
-                    <span class="date with-margin-bottom">{{ $article->published_date->tz($_COOKIE['timezone'])->format('F d, Y g:i A') }}</span>
+                    <span class="date with-margin-bottom">{{ $article->published_date->tz((!$_COOKIE['timezone']) ? 'UTC' : $_COOKIE['timezone'])->format('F d, Y g:i A') }}</span>
                     <div class="article-content">
                         <p>{{ $article->summary }}</p>
                     </div>
