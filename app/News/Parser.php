@@ -35,7 +35,7 @@ class Parser {
 			$articles = collect($this->feed($source->rss)->get_items());
 			$articles->each(function($item) use ($source){
 				if(Article::where('guid', $item->get_id() . '-' . preg_replace("![^a-z0-9]+!i", "-", $source->name))->first()){
-					Log::info('Parser made it to the most recent article for ' . $source->name);
+					// Log::info('Parser made it to the most recent article for ' . $source->name);
 					return false;
 				}
 

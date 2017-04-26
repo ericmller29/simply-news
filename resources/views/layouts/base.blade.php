@@ -16,6 +16,7 @@
     <link href="{{ asset('css/site.css') }}" rel="stylesheet">
 
     <!-- Scripts -->
+    <script src="//{{ Request::getHost() }}:6001/socket.io/socket.io.js"></script>
     <script>
         var split = new Date().toString().split(" ");
         var timeZoneFormatted = split[5];
