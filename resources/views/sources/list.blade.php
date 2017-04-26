@@ -17,8 +17,8 @@
 					<tr>
 						<td>{{ $s->name }}</td>
 						<td>{{ $s->rss }}</td>
-						<td>
-							<a href="#"><i class="fa fa-trash"></i></a>
+						<td class="action">
+							<a href="{{ url('/sources/delete/' . $s->id) }}"><i class="fa fa-trash"></i></a>
 						</td>
 					</tr>
 					@endforeach

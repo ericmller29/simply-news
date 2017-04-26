@@ -14,9 +14,6 @@
     <link href="https://fonts.googleapis.com/css?family=Asap:400,400i,500,700|Pacifico" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="{{ asset('css/site.css') }}" rel="stylesheet">
-
-    <!-- Scripts -->
-    <script src="//{{ Request::getHost() }}:6001/socket.io/socket.io.js"></script>
     <script>
         var split = new Date().toString().split(" ");
         var timeZoneFormatted = split[5];

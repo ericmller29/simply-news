@@ -4,6 +4,10 @@ table{
      td {
         font-weight: normal;
         font-size: 1em;
+
+        &.action{
+            padding: 0 10px;
+        }
     }
     a{
         transition: color 0.3s;

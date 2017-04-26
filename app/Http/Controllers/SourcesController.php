@@ -67,4 +67,11 @@ class SourcesController extends Controller
 
     	return redirect('/sources');
     }
+
+    public function deleteSource($id){
+        $source = Source::find($id);
+        $source->users()->detach(Auth::user());
+
+        return redirect('/sources');
+    }
 }
