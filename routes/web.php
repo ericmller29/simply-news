@@ -12,10 +12,10 @@
 */
 
 Route::get('/', 'HomeController@index');
-Route::get('/{id}', 'HomeController@index');
 
 Auth::routes();
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 Route::get('/sources', 'SourcesController@index');
 Route::get('/sources/add', 'SourcesController@addSource');
 Route::post('/sources/add', 'SourcesController@post_addSource');
+Route::get('/{id}', 'HomeController@index');
