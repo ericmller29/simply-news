@@ -45,11 +45,15 @@
             <a href="/" class="logo">Simply News</a>
         </div>
     </header>
-    @yield('content')
+    <div id="app">
+        @yield('content')
+    </div>
     <footer>
         <div class="container text-center">
             Made by <a href="http://eastoh.co" target="_blank">Eric Miller</a>
         </div>
     </footer>
+    
+    <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>

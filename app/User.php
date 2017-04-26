@@ -34,13 +34,18 @@ class User extends Authenticatable
         return $this->belongsToMany('App\Source', 'user_source', 'user_id', 'source_id');
     }
 
-    public static function articles(){
-        return Article::where(function($query){
+    public static function articles($sourceId = null){
+        return Article::where(function($query) use ($sourceId){
             $sources = collect(Auth::user()->sources);
 
-            $sources->each(function($item) use ($query){
-                $query->orWhere('source_id', $item->id);
-            });
+            if(!$sourceId){
+                $sources->each(function($item) use ($query){
+                    $query->orWhere('source_id', $item->id);
+                });
+            }else{
+                $query->where('source_id', $sourceId);
+            }
+
         })->orderBy('published_date', 'desc')->limit(20)->get();
     }
 }

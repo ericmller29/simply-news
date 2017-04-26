@@ -19,6 +19,7 @@
 
 	.article-content{
 		position: relative;
+		word-break: break-all;
 
 		&.has-image{
 			padding-right: 200px;
@@ -35,12 +36,9 @@
 		font-size: 0.7em;
 	}
 	.article-image{
-		width: 150px;
-		height: 150px;
+		width: 100%;
+		height: 200px;
 		overflow: hidden;
-		position: absolute;
-		right: 0;
-		top: 0;
 
 		img{
 			width: 100%;

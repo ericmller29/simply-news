@@ -24,11 +24,13 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id = null)
     {
         // $data['articles'] = Article::orderBy('published_date', 'desc')->get();
         // return response()->json(Auth::user()->sources);
-        $data['articles'] = Auth::user()->articles();
+        $data['articles'] = Auth::user()->articles($id);
+        $data['sources'] = Auth::user()->sources;
+        $data['source_id'] = $id;
 
         return view('dashboard', $data);
     }

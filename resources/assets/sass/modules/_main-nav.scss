@@ -26,6 +26,12 @@
 
 	.uname{
 		color: darken($accent, 20);
+
+		@include bp(small){
+			width: 100%;
+			display: block;
+			margin-bottom: 5px;
+		}
 	}
 
 	span{

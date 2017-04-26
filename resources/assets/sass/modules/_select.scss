@@ -1,0 +1,30 @@
+.select{
+	position: relative;
+	display: inline-block;
+	cursor: pointer;
+
+	@include bp(small){
+		width: 100%;
+	}
+
+	select{
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+		padding: 10px;
+		font-size: 0.8em;
+		border: solid 1px $gray;
+		background: #fff;
+		font-family: $font-family;
+		padding-right: 30px;
+	}
+
+	&:after{
+		content: '\f0d7';
+		position: absolute;
+		top: 50%;
+		right: 10px;
+		transform: translateY(-50%);
+		font-family: 'FontAwesome';
+	}
+}

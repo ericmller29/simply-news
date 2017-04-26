@@ -1,11 +1,13 @@
 @import "normalize";
 @import "variables";
+@import "mixins";
 @import "global";
 
 @import "elements/button";
 
 @import "modules/panel";
 @import "modules/form-input";
+@import "modules/select";
 @import "modules/article";
 @import "modules/table";
 @import "modules/main-nav";
