@@ -17,6 +17,11 @@
 
     <!-- Scripts -->
     <script>
+        var split = new Date().toString().split(" ");
+        var timeZoneFormatted = split[split.length - 2];
+        
+        document.cookie = "timezone=" + timeZoneFormatted;
+        
         window.Laravel = {!! json_encode([
             'csrfToken' => csrf_token(),
         ]) !!};
