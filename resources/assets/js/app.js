@@ -16,6 +16,7 @@ window.Vue = require('vue');
  */
 
 Vue.component('dashboardFilter', require('./components/DashboardFilter.vue'));
+Vue.component('simplyArticles', require('./components/simplyArticles.vue'));
 
 const app = new Vue({
     el: '#app'

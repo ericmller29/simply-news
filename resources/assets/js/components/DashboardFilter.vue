@@ -3,7 +3,6 @@
         props: ['filter'],
         mounted() {
             console.log('Component mounted.')
-            console.log(this.filter);
         },
         methods: {
             filterNews(){

@@ -17,24 +17,6 @@
                 </div>
             </dashboard-filter>
         </form>
-        <section class="feed">
-            @foreach($articles as $article)
-            <article class="article panel">
-                <a href="{{ $article->url }}" target="_blank">
-                    @if(isset($article->image))
-                    <div class="article-image with-margin-bottom">
-                        <img src="{{ $article->image }}">
-                    </div>
-                    @endif
-                    <h2>{{ $article->title }}</h2>
-                    <span class="date with-margin-bottom">{{ $article->published_date->tz((!isset($_COOKIE['timezone'])) ? 'UTC' : $_COOKIE['timezone'])->format('F d, Y g:i A') }}</span>
-                    <div class="article-content">
-                        <p>{{ $article->summary }}</p>
-                    </div>
-                    <span class="source"><em>Source: {{ $article->source->name }}</em></span>
-                </a>
-            </article>
-            @endforeach
-        </section>
+        <simply-articles articles="{{ $articles }}" filter="{{ $source_id }}"></simply-articles>
     </div>
 @endsection

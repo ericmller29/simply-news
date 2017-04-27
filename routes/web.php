@@ -19,4 +19,7 @@ Route::get('/sources', 'SourcesController@index');
 Route::get('/sources/add', 'SourcesController@addSource');
 Route::post('/sources/add', 'SourcesController@post_addSource');
 Route::get('/sources/delete/{id}', 'SourcesController@deleteSource');
+
+Route::get('/articles/{id?}', 'HomeController@loadNextArticles');
+
 Route::get('/{id}', 'HomeController@index');

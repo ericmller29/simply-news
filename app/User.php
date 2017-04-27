@@ -34,7 +34,7 @@ class User extends Authenticatable
         return $this->belongsToMany('App\Source', 'user_source', 'user_id', 'source_id');
     }
 
-    public static function articles($sourceId = null){
+    public static function articles($sourceId = null, $offset = null){
         return Article::where(function($query) use ($sourceId){
             $sources = collect(Auth::user()->sources);
 
@@ -46,6 +46,8 @@ class User extends Authenticatable
                 $query->where('source_id', $sourceId);
             }
 
-        })->orderBy('published_date', 'desc')->limit(20)->get();
+        })->with(['source'])->when($offset, function($query) use ($offset){
+            $query->offset($offset);
+        })->limit(10)->orderBy('published_date', 'desc')->get();
     }
 }

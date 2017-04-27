@@ -34,4 +34,10 @@ class HomeController extends Controller
 
         return view('dashboard', $data);
     }
+
+    public function loadNextArticles($id = null, Request $request){
+        $articles = Auth::user()->articles($id, $request->get('offset'));
+        
+        return response()->json($articles);
+    }
 }

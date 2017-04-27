@@ -15,11 +15,6 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="{{ asset('css/site.css') }}" rel="stylesheet">
     <script>
-        var split = new Date().toString().split(" ");
-        var timeZoneFormatted = split[5];
-        
-        document.cookie = "timezone=" + timeZoneFormatted;
-
         window.Laravel = {!! json_encode([
             'csrfToken' => csrf_token(),
         ]) !!};
