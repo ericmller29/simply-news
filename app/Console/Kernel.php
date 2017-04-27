@@ -13,7 +13,8 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        Commands\GatherArticles::class
+        Commands\GatherArticles::class,
+        Commands\PruneArticles::class
     ];
 
     /**
@@ -27,6 +28,7 @@ class Kernel extends ConsoleKernel
         // $schedule->command('inspire')
         //          ->hourly();
         $schedule->command('articles:gather')->withoutOverlapping()->everyMinute();
+        $schedule->command('articles:prune')->withoutOverlapping()->daily();
     }
 
     /**
