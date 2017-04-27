@@ -29,7 +29,7 @@ class HomeController extends Controller
         // $data['articles'] = Article::orderBy('published_date', 'desc')->get();
         // return response()->json(Auth::user()->sources);
         $data['articles'] = Auth::user()->articles($id);
-        $data['sources'] = Auth::user()->sources;
+        $data['sources'] = Auth::user()->sources()->orderBy('name')->get();
         $data['source_id'] = $id;
 
         return view('dashboard', $data);
