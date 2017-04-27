@@ -15,6 +15,10 @@
 	                    </span>
 	                @endif
             	</div>
+            	<div class="form-input with-margin-bottom">
+            		<label for="local">Local news feed?</label>
+            		<input type="checkbox" name="local" id="local">
+            	</div>
             	<div class="form-input text-center">
             		<button type="submit" class="btn">Add Source</button>
             	</div>

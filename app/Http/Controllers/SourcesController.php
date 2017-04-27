@@ -56,6 +56,7 @@ class SourcesController extends Controller
 	    	$source = new Source();
 	    	$source->name = $feed->get_title();
 	    	$source->rss = $request->get('rss');
+            $source->local = ($request->get('local')) ? true : false;
 	    	if($feed->get_image_url()){
 	    		$source->logo = $feed->get_image_url();
 	    	}

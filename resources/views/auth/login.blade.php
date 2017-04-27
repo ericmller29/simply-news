@@ -8,7 +8,7 @@
             {{ csrf_field() }}
             <div class="form-input with-margin-bottom{{ $errors->has('username') ? ' has-error' : '' }}">
                 <label for="username">Username:</label>
-                <input type="text" name="username" id="username">
+                <input type="text" name="username" id="username" value="{{ old('username') }}">
                 @if ($errors->has('username'))
                     <span class="help-block">
                         {{ $errors->first('username') }}
