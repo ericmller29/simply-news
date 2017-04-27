@@ -28,7 +28,7 @@
 
 	.article-content{
 		position: relative;
-		word-break: break-all;
+		word-wrap: break-word;
 
 		&.has-image{
 			padding-right: 200px;
