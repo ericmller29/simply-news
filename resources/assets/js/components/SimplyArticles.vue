@@ -3,7 +3,7 @@
 		<article class="article panel" v-for="article in parsedArticles">
 			<a v-bind:href="article.url" v-bind:title="article.title" target="_blank">
                 <div class="article-image with-margin-bottom" v-if="article.image">
-                    <img v-bind:src="article.image" v-bind:alt="article.title">
+                    <img v-bind:src="updateImage(article.image, 'w', 1000)" v-bind:alt="article.title">
                 </div>
 				<h2>{{ article.title }}</h2>
 				<span class="date with-margin-bottom">{{ parseDate(article.published_date) }}</span>
@@ -74,6 +74,17 @@
 							_this.displayLoader = false;
 						}, 1000);
 					});
+			},
+			updateImage(uri, key, value) {
+				var re = new RegExp("([?&])" + key + "=.*?(&|$)", "i");
+				var separator = uri.indexOf('?') !== -1 ? "&" : "?";
+
+				if (uri.match(re)) {
+					return uri.replace(re, '$1' + key + "=" + value + '$2');
+				}
+				else {
+					return uri + separator + key + "=" + value;
+				}
 			}
 		}
 	}
