@@ -49,7 +49,7 @@
 			parseDate(date){
 				var timezone = moment.tz.guess();
 
-				return moment.utc(date).tz(timezone).format('MMMM Do, Y h:m a');
+				return moment.utc(date).tz(timezone).format('MMMM Do, Y h:mm a');
 			},
 			loadMoreArticles(){
 				var _this = this;

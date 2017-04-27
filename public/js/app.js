@@ -1780,7 +1780,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		parseDate: function parseDate(date) {
 			var timezone = __WEBPACK_IMPORTED_MODULE_0_moment___default.a.tz.guess();
 
-			return __WEBPACK_IMPORTED_MODULE_0_moment___default.a.utc(date).tz(timezone).format('MMMM Do, Y h:m a');
+			return __WEBPACK_IMPORTED_MODULE_0_moment___default.a.utc(date).tz(timezone).format('MMMM Do, Y h:mm a');
 		},
 		loadMoreArticles: function loadMoreArticles() {
 			var _this = this;
