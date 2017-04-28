@@ -50,7 +50,7 @@ class ParseAndSaveArticles implements ShouldQueue
         $date = Carbon::parse($this->item->get_date('Y-m-d H:i e'));
         $source = Source::where('name', $this->feedtitle)->first();
         $article = new Article();
-        $article->guid = $this->item->get_id() . '-' . preg_replace("![^a-z0-9]+!i", "-", $this->feedtitle);
+        $article->guid = $this->item->get_id();
         $article->title = $this->item->get_title();
         $article->summary = str_replace('Read more...', '', strip_tags($this->item->get_description()));
         $article->published_date = $date;
