@@ -36,7 +36,7 @@ class Parser {
 			$articles->each(function($item) use ($source){
 				if(Article::where('guid', $item->get_id())->first()){
 					// Log::info('Parser made it to the most recent article for ' . $source->name);
-					break;
+					return false;
 				}
 
 				$job = (new ParseAndSaveArticles($item, $this->feed->get_title()));
