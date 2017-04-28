@@ -40,7 +40,7 @@
 			this.parsedArticles = JSON.parse(this.articles);
 
 			window.onscroll = function(){
-			    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+			    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight && !_this.displayLoader) {
 			        _this.loadMoreArticles();
 			    }
 			}
@@ -54,7 +54,7 @@
 			loadMoreArticles(){
 				var _this = this;
 				var nextSet = this.currentArticleNum + this.articlesToDisplay;
-				
+				console.log(nextSet);
 				axios.get('/articles/' + this.filter, { params: { offset: nextSet } })
 					.then(function(payload){
 						_this.displayLoader = true;
