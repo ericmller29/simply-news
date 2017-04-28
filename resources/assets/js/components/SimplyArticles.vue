@@ -10,7 +10,7 @@
                 <div class="article-content">
                     <p>{{ article.summary }}</p>
                 </div>
-                <span class="source"><em>Source: {{ article.source.name }}</em></span>
+                <span class="source"><em>Source: {{ (article.source) ? article.source.name : 'none' }}</em></span>
 			</a>
 		</article>
 		<div class="loader text-center with-margin-bottom" v-if="displayLoader"><img src="http://newsapp.dev/img/loader.gif"></div>
@@ -38,7 +38,7 @@
 			var _this = this;
 
 			this.parsedArticles = JSON.parse(this.articles);
-
+			console.log(this.parsedArticles);
 			window.onscroll = function(){
 			    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight && !_this.displayLoader) {
 			        _this.loadMoreArticles();

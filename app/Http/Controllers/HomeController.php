@@ -16,7 +16,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        // $this->middleware('auth');
     }
 
     /**
@@ -28,15 +28,23 @@ class HomeController extends Controller
     {
         // $data['articles'] = Article::orderBy('published_date', 'desc')->get();
         // return response()->json(Auth::user()->sources);
-        $data['articles'] = Auth::user()->articles($id);
-        $data['sources'] = Auth::user()->sources()->orderBy('name')->get();
+        if(Auth::check()){
+            $data['articles'] = Auth::user()->articles($id);
+            $data['sources'] = Auth::user()->sources()->orderBy('name')->get();
+        }else{
+            $data['articles'] = Article::guest($id);
+        }
         $data['source_id'] = $id;
 
         return view('dashboard', $data);
     }
 
     public function loadNextArticles($id = null, Request $request){
-        $articles = Auth::user()->articles($id, $request->get('offset'));
+        if(Auth::check()){
+            $articles = Auth::user()->articles($id, $request->get('offset'));
+        }else{
+            $articles = Article::guest($id, $request->get('offset'));
+        }
         
         return response()->json($articles);
     }

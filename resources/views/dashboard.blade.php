@@ -5,6 +5,7 @@
         <nav class="mini-nav">
             <a href="#" class="active">Popular</a> / <a href="#">New</a>
         </nav>
+        @if(Auth::check())
         <form>
             <dashboard-filter inline-template filter="{{ $source_id }}">
                 <div class="select with-margin-bottom">
@@ -17,6 +18,7 @@
                 </div>
             </dashboard-filter>
         </form>
+        @endif
         <simply-articles articles="{{ $articles }}" filter="{{ $source_id }}"></simply-articles>
     </div>
 @endsection
