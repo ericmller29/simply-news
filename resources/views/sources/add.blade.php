@@ -16,7 +16,14 @@
 	                @endif
             	</div>
             	<div class="form-input with-margin-bottom">
-            		<label for="local">Local news feed?</label>
+            		<label for="local">Private feed?
+            			<a href="javascript:void(0);" class="tooltip">
+            				<i class="fa fa-question"></i>
+            				<span class="tip-message">
+            					Users may not want to see a local news source, or you may not want them to see your feed!
+            				</span>
+            			</a>
+            		</label>
             		<input type="checkbox" name="local" id="local">
             	</div>
             	<div class="form-input text-center">
