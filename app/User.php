@@ -50,4 +50,8 @@ class User extends Authenticatable
             $query->offset($offset);
         })->limit(10)->orderBy('published_date', 'desc')->get();
     }
+
+    public static function isAdmin(){
+        return Auth::user()->user_role == 100;
+    }
 }

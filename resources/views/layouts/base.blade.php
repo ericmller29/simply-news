@@ -31,7 +31,10 @@
                 <span class="uname">Welcome, {{ Auth::user()->name }}</span>
                 @endif
                 @if(Auth::check())
-                <span><a href="/sources">Your Sources</a></span>
+                <span><a href="/sources">Sources</a></span>
+                @if(Auth::user()->isAdmin())
+                <span><a href="/sources/global">Global Sources</a></span>
+                @endif
                 @endif
                 <span><a href="#">How it works</a></span>
                 @if(Auth::check())

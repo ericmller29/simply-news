@@ -12,5 +12,9 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // $this->call(UsersTableSeeder::class);
+        DB::table('categories')->delete();
+        DB::table('categories')->insert(['name' => 'Uncategorized', 'slug'=>'uncategorized']);
+
+        DB::table('sources')->update([ 'cat_id' => DB::table('categories')->first()->id ]);
     }
 }
