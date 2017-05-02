@@ -2,6 +2,7 @@
 	position: relative;
 	display: inline-block;
 	cursor: pointer;
+	overflow: hidden;
 
 	@include bp(small){
 		width: 100%;
@@ -17,6 +18,7 @@
 		background: #fff;
 		font-family: $font-family;
 		padding-right: 30px;
+		width: 100%;
 	}
 
 	&:after{
